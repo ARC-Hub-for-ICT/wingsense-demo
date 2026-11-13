@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WingSense | Activity concept</title>
+  <link rel="icon" href="assets/img/wingsense-logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="https://wingsense.ie" target="_blank" rel="noopener noreferrer">
+        <img class="brand-logo" src="assets/img/wingsense-logo.webp" alt="WingSense logo">
+      </a>
+    </div>
+    <div class="header-actions">
+      <div class="header-tag">Dublin · Pilot concept</div>
+      <button class="info-button" id="demo-info-button" type="button" aria-label="About this concept demo" aria-haspopup="dialog">
+        <span aria-hidden="true">i</span>
+      </button>
+    </div>
+  </header>
+
+  <dialog class="demo-dialog" id="demo-info" aria-labelledby="demo-info-title">
+    <div class="dialog-heading">
+      <div>
+        <div class="eyebrow">About this map</div>
+        <h2 id="demo-info-title">Concept demo — simulated data only</h2>
+      </div>
+      <button class="dialog-close" id="demo-info-close" type="button" aria-label="Close information"><span aria-hidden="true">×</span></button>
+    </div>
+    <p>No sensors are installed and no sightings have been collected here. Map locations, activity patterns, and example species sightings are illustrative simulations, not verified records.</p>
+    <p>The timeline demonstrates how future monitoring data could be explored over time.</p>
+  </dialog>
+
+  <main>
+    <aside aria-label="Dashboard information">
+      <div class="eyebrow">Future field activity</div>
+      <h1>Activity through the day</h1>
+      <p class="intro">Explore a concept for viewing pollinator activity and potential threats around Dublin.</p>
+
+      <section class="section" aria-labelledby="threats-title">
+        <h2 class="section-title" id="threats-title">THREATS &amp; PREDATORS</h2>
+        <p class="filter-hint">Toggle a layer to explore simulated activity.</p>
+        <div class="threat-list" id="threat-list"></div>
+      </section>
+
+      <section class="section timeline-section" aria-label="Simulated time interval">
+        <div class="section-title">TIME INTERVAL</div>
+        <div class="timeline-card">
+          <div class="time-head">
+            <div>
+              <div class="time-label">04/04/2026 SIMULATION</div>
+              <div class="time-value" id="time-value">12:00</div>
+            </div>
+            <button type="button" class="play-button" id="play-button" aria-label="Play timeline">▶&nbsp; Play</button>
+          </div>
+          <input id="timeline" type="range" min="0" max="48" value="24" step="1" aria-label="Time of day">
+          <div class="timeline-ticks" aria-hidden="true">
+            <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <section class="map-shell" aria-label="Map of illustrative activity and example sightings">
+      <div id="map" role="application" aria-label="Interactive map showing simulated activity and toggled example sightings"></div>
+      <div class="map-chip">Dublin, Ireland <span aria-hidden="true">·</span> Illustrative concept</div>
+      <section class="map-legend" id="map-legend" aria-label="Abundance activity legend">
+        <div class="legend-content" id="legend-content">
+          <div class="legend-title">Abundance <span>(activity)</span></div>
+          <div class="legend-body">
+            <div class="abundance-gradient"></div>
+            <div class="abundance-labels"><span>High</span><span>Medium</span><span>Low</span></div>
+          </div>
+          <p class="legend-note">Illustrative intensity</p>
+        </div>
+        <button class="legend-toggle" id="legend-toggle" type="button" aria-expanded="true" aria-controls="legend-content" aria-label="Hide abundance legend">
+          <span aria-hidden="true">‹</span>
+        </button>
+      </section>
+    </section>
+  </main>
+
+  
+  
+</body>
+</html>
