@@ -118,22 +118,27 @@
         <p class="experiment-intro">Radar and camera dataset · 9,620 labelled windows</p>
         <figure class="class-chart" aria-labelledby="class-chart-caption">
           <figcaption id="class-chart-caption">Figure 3.15 · Overall class distribution</figcaption>
-          <div class="chart-row">
-            <div class="chart-label"><span>Idle</span><span>926 · 9.6%</span></div>
-            <progress max="100" value="9.6" aria-label="Idle: 926 windows, 9.6 percent"></progress>
+          <div class="donut-chart" role="img" aria-label="Overall class distribution across 9,620 labelled windows. Active: 4,102, 42.6 percent. Foraging: 4,144, 43.1 percent. Present: 448, 4.7 percent. Idle: 926, 9.6 percent.">
+            <span class="donut-value donut-value--active" aria-hidden="true">43%</span>
+            <span class="donut-value donut-value--foraging" aria-hidden="true">43%</span>
+            <span class="donut-value donut-value--present" aria-hidden="true">5%</span>
+            <span class="donut-value donut-value--idle" aria-hidden="true">10%</span>
+            <div class="donut-total" aria-hidden="true"><strong>9,620</strong><span>total</span></div>
           </div>
-          <div class="chart-row">
-            <div class="chart-label"><span>Present</span><span>448 · 4.7%</span></div>
-            <progress max="100" value="4.7" aria-label="Present: 448 windows, 4.7 percent"></progress>
-          </div>
-          <div class="chart-row">
-            <div class="chart-label"><span>Active</span><span>4,102 · 42.6%</span></div>
-            <progress max="100" value="42.6" aria-label="Active: 4,102 windows, 42.6 percent"></progress>
-          </div>
-          <div class="chart-row">
-            <div class="chart-label"><span>Foraging</span><span>4,144 · 43.1%</span></div>
-            <progress max="100" value="43.1" aria-label="Foraging: 4,144 windows, 43.1 percent"></progress>
-          </div>
+          <ul class="chart-legend" aria-label="Class counts and percentages">
+            <li class="chart-legend-item chart-legend-item--active">
+              <span class="chart-swatch" aria-hidden="true"></span><span class="chart-name">Active</span><strong>4,102</strong><span class="chart-percent">42.6%</span>
+            </li>
+            <li class="chart-legend-item chart-legend-item--foraging">
+              <span class="chart-swatch" aria-hidden="true"></span><span class="chart-name">Foraging</span><strong>4,144</strong><span class="chart-percent">43.1%</span>
+            </li>
+            <li class="chart-legend-item chart-legend-item--present">
+              <span class="chart-swatch" aria-hidden="true"></span><span class="chart-name">Present</span><strong>448</strong><span class="chart-percent">4.7%</span>
+            </li>
+            <li class="chart-legend-item chart-legend-item--idle">
+              <span class="chart-swatch" aria-hidden="true"></span><span class="chart-name">Idle</span><strong>926</strong><span class="chart-percent">9.6%</span>
+            </li>
+          </ul>
         </figure>
         <p class="experiment-note">A result from an earlier experiment—not live monitoring or current activity at this location.</p>
       </section>

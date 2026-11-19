@@ -242,17 +242,64 @@
     .experiment-heading h2 { font-size: 17px; line-height: 1.2; margin: 5px 0 0; }
     .experiment-close { width: 28px; height: 28px; flex-basis: 28px; }
     .experiment-intro { color: #52664a; font-size: 11px; margin: 10px 0 12px; }
-    .class-chart { margin: 0; }
-    .class-chart figcaption { color: #294a2b; font-size: 12px; font-weight: 750; margin-bottom: 11px; }
-    .chart-row + .chart-row { margin-top: 9px; }
-    .chart-label { display: flex; justify-content: space-between; gap: 8px; color: #354e31; font-size: 11px; margin-bottom: 4px; }
-    .chart-label span:last-child { color: #52664a; font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .chart-row progress { display: block; width: 100%; height: 9px; appearance: none; border: 0; border-radius: 8px; background: #e6eadc; }
-    .chart-row progress::-webkit-progress-bar { border-radius: 8px; background: #e6eadc; }
-    .chart-row progress::-webkit-progress-value { border-radius: 8px; background: #4a9d67; }
-    .chart-row progress::-moz-progress-bar { border-radius: 8px; background: #4a9d67; }
-    .chart-row:nth-of-type(3) progress::-webkit-progress-value, .chart-row:nth-of-type(4) progress::-webkit-progress-value { background: #267c56; }
-    .chart-row:nth-of-type(3) progress::-moz-progress-bar, .chart-row:nth-of-type(4) progress::-moz-progress-bar { background: #267c56; }
+    .class-chart { --class-active: #c84242; --class-foraging: #f39427; --class-present: #42b3c5; --class-idle: #999; margin: 0; }
+    .class-chart figcaption { color: #294a2b; font-size: 12px; font-weight: 750; margin-bottom: 11px; text-align: center; }
+    .donut-chart {
+      position: relative;
+      width: min(190px, 100%);
+      aspect-ratio: 1;
+      margin: 0 auto 13px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--class-active) 0% 42.64%,
+        var(--class-foraging) 42.64% 85.72%,
+        var(--class-present) 85.72% 90.38%,
+        var(--class-idle) 90.38% 100%
+      );
+    }
+    .donut-chart::before {
+      position: absolute;
+      inset: 29%;
+      border-radius: 50%;
+      background: #fffce9;
+      box-shadow: inset 0 0 0 1px rgba(58, 91, 36, .12);
+      content: "";
+    }
+    .donut-value {
+      position: absolute;
+      z-index: 1;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .28);
+      transform: translate(-50%, -50%);
+    }
+    .donut-value--active { top: 42%; left: 84%; }
+    .donut-value--foraging { top: 74%; left: 21%; }
+    .donut-value--present { top: 24%; left: 24%; }
+    .donut-value--idle { top: 14%; left: 40%; }
+    .donut-total {
+      position: absolute;
+      z-index: 1;
+      inset: 29%;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      color: #123c18;
+      line-height: 1.1;
+    }
+    .donut-total strong { font-size: 19px; font-variant-numeric: tabular-nums; }
+    .donut-total span { font-size: 12px; font-weight: 700; }
+    .chart-legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 10px; list-style: none; margin: 0; padding: 0; }
+    .chart-legend-item { display: grid; grid-template-columns: 9px minmax(0, 1fr) auto; gap: 2px 6px; align-items: center; color: #354e31; font-size: 11px; }
+    .chart-swatch { grid-row: 1 / 3; width: 9px; height: 9px; border-radius: 50%; background: #999; }
+    .chart-name { min-width: 0; }
+    .chart-legend-item strong { font-size: 11px; font-variant-numeric: tabular-nums; }
+    .chart-percent { grid-column: 2 / -1; color: #52664a; font-size: 10px; }
+    .chart-legend-item--active .chart-swatch { background: var(--class-active); }
+    .chart-legend-item--foraging .chart-swatch { background: var(--class-foraging); }
+    .chart-legend-item--present .chart-swatch { background: var(--class-present); }
+    .chart-legend-item--idle .chart-swatch { background: var(--class-idle); }
     .experiment-note { border-top: 1px solid var(--line); color: #66745b; font-size: 10px; line-height: 1.45; margin: 13px 0 0; padding-top: 10px; }
     .map-site-marker {
       display: grid;
