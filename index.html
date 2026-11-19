@@ -29,24 +29,41 @@
     <div class="dialog-heading">
       <div>
         <div class="eyebrow">About this map</div>
-        <h2 id="demo-info-title">Concept demo — simulated data only</h2>
+        <h2 id="demo-info-title">Concept demo — illustrative monitoring</h2>
       </div>
       <button class="dialog-close" id="demo-info-close" type="button" aria-label="Close information"><span aria-hidden="true">×</span></button>
     </div>
-    <p>No sensors are installed and no sightings have been collected here. Map locations, activity patterns, and example species sightings are illustrative simulations, not verified records.</p>
-    <p>The timeline demonstrates how future monitoring data could be explored over time.</p>
+    <p>Map activity, weather, and the Asian hornet notification are illustrative concepts, not live measurements or verified sightings. The Trinity rooftop hive panel shows a real result from an earlier radar and camera experiment (Figure 3.15), not current monitoring.</p>
+    <p>All other map locations are proposed monitoring sites with no experimental results shown.</p>
   </dialog>
 
   <main>
     <aside aria-label="Dashboard information">
       <div class="eyebrow">Future field activity</div>
       <h1>Activity through the day</h1>
-      <p class="intro">Explore a concept for viewing pollinator activity and potential threats around Dublin.</p>
+      <p class="intro">Explore a concept for viewing pollinator activity at proposed locations around Dublin.</p>
 
-      <section class="section" aria-labelledby="threats-title">
-        <h2 class="section-title" id="threats-title">THREATS &amp; PREDATORS</h2>
-        <p class="filter-hint">Toggle a layer to explore simulated activity.</p>
-        <div class="threat-list" id="threat-list"></div>
+      <section class="section" aria-labelledby="explore-title">
+        <h2 class="section-title" id="explore-title">EXPLORE MAP</h2>
+        <p class="filter-hint">Explore proposed monitoring locations. Select the Trinity rooftop hive marker to view an earlier experimental result.</p>
+        <div class="site-key" aria-label="Map marker types">
+          <span><span aria-hidden="true">🐝</span> Rooftop hive</span>
+          <span><span aria-hidden="true">🏢</span> Campus</span>
+          <span><span aria-hidden="true">🌳</span> Park</span>
+          <span><span aria-hidden="true">🌊</span> Riverside</span>
+        </div>
+      </section>
+
+      <section class="section future-section" aria-labelledby="future-title">
+        <h2 class="section-title" id="future-title">FUTURE APPLICATIONS</h2>
+        <div class="future-alert">
+          <span class="future-alert-icon" aria-hidden="true">!</span>
+          <div>
+            <div class="future-alert-label">Illustrative future alert</div>
+            <strong>Potential Asian hornet activity</strong>
+            <p>A concept for a future early-warning notification. No hornet has been detected here.</p>
+          </div>
+        </div>
       </section>
 
       <section class="section timeline-section" aria-label="Simulated time interval">
@@ -67,9 +84,59 @@
       </section>
     </aside>
 
-    <section class="map-shell" aria-label="Map of illustrative activity and example sightings">
-      <div id="map" role="application" aria-label="Interactive map showing simulated activity and toggled example sightings"></div>
+    <section class="map-shell" aria-label="Map of proposed monitoring locations">
+      <div id="map" role="application" aria-label="Interactive map showing proposed monitoring locations and illustrative activity"></div>
       <div class="map-chip">Dublin, Ireland <span aria-hidden="true">·</span> Illustrative concept</div>
+      <div class="weather-widget" id="weather-widget">
+        <button class="weather-toggle" id="weather-toggle" type="button" aria-expanded="true" aria-controls="weather-content" aria-label="Hide weather panel">
+          <span aria-hidden="true">›</span>
+        </button>
+        <section class="weather-card" id="weather-content" aria-label="Illustrative weather conditions" aria-hidden="false">
+          <div class="weather-heading">
+            <span class="weather-title">Weather</span>
+            <span class="weather-demo">SIMULATED</span>
+          </div>
+          <div class="weather-condition">
+            <span class="weather-icon" id="weather-icon" aria-hidden="true">☁</span>
+            <span id="weather-condition">Cloudy</span>
+          </div>
+          <div class="weather-metrics">
+            <div><span aria-hidden="true">🌡</span><strong id="weather-temperature">12°</strong><small>Temperature</small></div>
+            <div><span aria-hidden="true">💧</span><strong id="weather-humidity">68%</strong><small>Humidity</small></div>
+            <div><span aria-hidden="true">≋</span><strong id="weather-wind">15 km/h</strong><small>Wind</small></div>
+          </div>
+        </section>
+      </div>
+      <section class="experiment-panel" id="experiment-panel" aria-labelledby="experiment-title" hidden>
+        <div class="experiment-heading">
+          <div>
+            <div class="eyebrow">Earlier rooftop experiment</div>
+            <h2 id="experiment-title">Trinity rooftop hive</h2>
+          </div>
+          <button type="button" class="dialog-close experiment-close" id="experiment-close" aria-label="Close experimental result"><span aria-hidden="true">×</span></button>
+        </div>
+        <p class="experiment-intro">Radar and camera dataset · 9,620 labelled windows</p>
+        <figure class="class-chart" aria-labelledby="class-chart-caption">
+          <figcaption id="class-chart-caption">Figure 3.15 · Overall class distribution</figcaption>
+          <div class="chart-row">
+            <div class="chart-label"><span>Idle</span><span>926 · 9.6%</span></div>
+            <progress max="100" value="9.6" aria-label="Idle: 926 windows, 9.6 percent"></progress>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label"><span>Present</span><span>448 · 4.7%</span></div>
+            <progress max="100" value="4.7" aria-label="Present: 448 windows, 4.7 percent"></progress>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label"><span>Active</span><span>4,102 · 42.6%</span></div>
+            <progress max="100" value="42.6" aria-label="Active: 4,102 windows, 42.6 percent"></progress>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label"><span>Foraging</span><span>4,144 · 43.1%</span></div>
+            <progress max="100" value="43.1" aria-label="Foraging: 4,144 windows, 43.1 percent"></progress>
+          </div>
+        </figure>
+        <p class="experiment-note">A result from an earlier experiment—not live monitoring or current activity at this location.</p>
+      </section>
       <section class="map-legend" id="map-legend" aria-label="Abundance activity legend">
         <div class="legend-content" id="legend-content">
           <div class="legend-title">Abundance <span>(activity)</span></div>

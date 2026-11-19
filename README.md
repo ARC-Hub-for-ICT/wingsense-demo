@@ -1,8 +1,8 @@
 # WingSense demo
 
-A static, interactive concept dashboard for exploring simulated insect activity and illustrative pollinator-threat layers around Dublin.
+A static, interactive concept dashboard for exploring illustrative pollinator activity at proposed monitoring locations around Dublin.
 
-**This is a concept demo, not monitoring data.** No sensors are installed at these locations. All activity profiles and example sighting locations are synthetic and must not be interpreted as verified observations.
+**This is a concept demo, not live monitoring.** The map activity and timeline-linked weather are simulated, and the Asian hornet notification is a future-application concept—not a sighting. The Trinity rooftop hive panel shows an earlier experimental result: the radar-and-camera dataset class distribution from Figure 3.15 (9,620 labelled windows). All other map locations are proposed monitoring sites with no experimental results shown.
 
 ## Run locally
 
