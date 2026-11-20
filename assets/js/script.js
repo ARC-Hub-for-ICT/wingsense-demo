@@ -114,7 +114,7 @@
         paint: {
           "heatmap-weight": ["get", "weight"],
           "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 10, 0.8, 15, 1.5],
-          "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 10, 28, 15, 42],
+          "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 10, 40, 15, 60],
           "heatmap-opacity": 0.88,
           "heatmap-color": [
             "interpolate", ["linear"], ["heatmap-density"],
